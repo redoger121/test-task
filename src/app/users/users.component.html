@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="card mb-3 h-100" style="max-width: 540px;" *ngFor="let user of users|async;">
+
+      <div class="row g-0">
+        <div class="col-md-4 img-container">
+          <img [src]='user.avatar' class="img-fluid rounded-start" alt="user avatar">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{user.first_name}} </h5>
+            <p class="card-text">{{user.last_name}}</p>
+            <a class="btn btn-primary" [routerLink]="['/users', user.id]">Подробное описание</a>
+            <button class="btn btn-danger" (click)="onDeleteUser(user.id)">Удалить</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!-- <img [src]='user.avatar' class="card-img-top" alt="user avatar">
+            <div class="card-body">
+              <h5 class="card-title">{{user.first_name}} {{user.last_name}}</h5>
+             
+              <a class="btn btn-primary" [routerLink]="['/users', user.id]" >Подробное описание</a>
+              <button class="btn btn-danger" (click)="onDeleteUser(user.id)">Delete</button>
+            </div>
+          </div> -->

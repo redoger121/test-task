@@ -1,0 +1,16 @@
+.row{
+    margin-left: auto;
+    margin-right:auto ;
+    margin-bottom: 10px;
+}
+
+button{
+margin-top: 20px;
+}
+
+span{
+    color: red;
+}
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}

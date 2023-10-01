@@ -1,0 +1,22 @@
+.container{
+    padding-top: 10px;
+}
+
+.card{
+    padding-left: 0;
+}
+
+.card:nth-child(2n){
+    margin-left: 10px;
+}
+
+
+.img-fluid {
+    max-width: 148px;
+    height: -webkit-fill-available;
+}
+@media (max-width: 1200px) {
+    .card:nth-child(2n){
+        margin-left: 0;
+    }
+  }

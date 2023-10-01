@@ -1,0 +1,38 @@
+<div class="container  ">
+    <div class="row col-8 mx-auto" >
+<app-loading-spiner *ngIf="isLoading"></app-loading-spiner>
+
+<app-alert *ngIf="error" (close)="onHandleEroror()" [message]="error"></app-alert>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" *ngIf="!isLoading" class="auth-form">
+            <div class="mb-3 ">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" 
+                id="email"
+                ngModel
+                name="email"
+                #email="ngModel"
+                required
+                email>
+                <span *ngIf="!email.valid && email.touched">Введите корректный email</span>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Пароль</label>
+                <input type="password" class="form-control" 
+                id="password"
+                ngModel
+                name="password"
+                #password="ngModel"
+                required>
+                <span *ngIf="!password.valid && password.touched">Поле не должно быть пустым</span>
+
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="submit" class="btn btn-success" 
+                [disabled]="!f.valid" >{{isLogginggMode? 'Войти': 'Зарегистрироваться'}}</button>
+                <button class="btn btn-primary" type="button" (click)="onSwitchMode()">Перейти к {{isLogginggMode? 'регистрации': 'авторизации'}}</button>
+            </div>
+        </form>
+        
+    </div>
+</div>
+
